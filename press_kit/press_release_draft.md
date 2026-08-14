@@ -8,13 +8,13 @@ CONCEPTS: PRESS_RELEASE|OPEN_SOURCE_LICENSING|ASIC|AI_INFERENCE|PRODUCT_LAUNCH
 
 ## Headline candidates (pick one)
 
-1. **Anyone Can Now Build and Sell This AI Chip — Free, Forever**
-2. **The RISC-V Playbook Comes for AI Chips**
-3. **Seven Years of Chip Design, Given Away: VSA Open-Sources a Complete AI Inference Accelerator**
-4. **An AI Chip Design With No HBM — and No Owner**
-5. **This Chip's Simulator Is the Chip: VSA Open-Sources a Fully Deterministic AI Inference Design**
+1. **GPUs Cost Up to $40K. This AI Chip Design Is Free Forever.**
+2. **Nobody Can Own This AI Chip Design — Not Even Big Tech**
+3. **AI Chip Design Goes Open: Build It, Sell It, Pay No One**
+4. **Inference Is Two-Thirds of AI Compute. This Chip Design Costs $0.**
+5. **Fork an AI Chip Design: Build It, Sell It, Pay Nobody, Ever**
 
-*(Headline test: does it open a question the reader has to click to close? A headline that merely describes the release — "VSA Releases Open-Source Design" — is a changelog entry, not a headline.)*
+*(All five are panel-survivors from the 2026-08-14 hook review: ≤66 chars so nothing crops on a phone, payload first, one idea each, every claim sourced — #1/#4 grounding `productization_feasibility_2026-07-10.md` §9.2/§9.1, #2/#3/#5 `license_decision_memo.md`.)*
 
 ## Subhead
 
@@ -24,13 +24,13 @@ A complete reference architecture for a deterministic, no-HBM neural-network inf
 
 ## Body
 
-**[CITY, DATE — 2026-09-06]** — The VSA project today released the complete design of an open-source AI inference accelerator: the Virtual Systolic Array, a deterministic, weight-stationary MAC fabric architecture for neural-network inference [`PROSPECT_QA.md`]. The release includes finalized architecture specifications, a golden reference model, a toy compiler, and an end-to-end demonstration in which a compiled convolutional neural network runs bit-exact against the specification — the same answer, every cycle, every time [`release_plan_2026-09-06.md` §3].
+**[CITY, DATE — 2026-09-06]** — The VSA project today released the design of an open-source AI inference accelerator: the Virtual Systolic Array, a deterministic, weight-stationary MAC fabric architecture for neural-network inference [`PROSPECT_QA.md`]. The release includes finalized architecture specifications, a golden reference model, a toy compiler, and an end-to-end demonstration in which a compiled convolutional neural network runs bit-exact against the specification — the same answer, every cycle, every time [`release_plan_2026-09-06.md` §3].
 
 The design takes a deliberately different bet from GPU-class accelerators: trade peak MACs-per-cycle for massive on-chip weight residency, so whole networks chain layer-to-layer on chip with no HBM and no external-RAM round-trips [`PROSPECT_QA.md`]. Execution is fully deterministic — no data-dependent timing, control, or routing; every cycle's schedule is fixed at configuration time [`VSA_ASIC:docs/baseline/core_design.md` §4]. Inference-only by design: that constraint is what makes full determinism possible [`PROSPECT_QA.md`].
 
 Determinism is more than a correctness story — it is an economic one. Because a cycle-accurate model of the design *is* the design's exact behavior rather than an approximation, verification becomes equivalence checking and silicon validation becomes replay-and-diff, removing the design categories (coherence, speculation, dynamic scheduling, cache hierarchies) that consume most verification effort in conventional accelerator programs [`productization_feasibility_2026-07-10.md` §4]. An independent feasibility assessment concluded that a top-20 semiconductor company could take the design to production silicon as a standard mid-sized ASIC program — roughly 24–36 months and $150–400M all-in *(industry-norm estimate, ±2–3×)* [`productization_feasibility_2026-07-10.md` §2, §6].
 
-The architecture also avoids the most constrained parts of today's AI supply chain: no HBM, no exotic 2.5D packaging required for the baseline, and a design targeted at mature process nodes [`productization_feasibility_2026-07-10.md` §4]. Its uniform tiling — one Group designed and verified once, then arrayed — and native defect tolerance (dead Blocks are disabled and the workload remapped, with identical numerical results) further push it toward the inexpensive, forgiving end of accelerator productization [`productization_feasibility_2026-07-10.md` §4, §7].
+The architecture also avoids the most constrained parts of today's AI supply chain: no HBM, no exotic 2.5D packaging required for the baseline, and a design targeted at mature process nodes [`productization_feasibility_2026-07-10.md` §4]. Its uniform tiling — one Group designed and verified once, then arrayed — and native defect tolerance (dead Blocks are disabled and the workload remapped to pre-compiled, slightly derated configurations) further push it toward the inexpensive, forgiving end of accelerator productization [`productization_feasibility_2026-07-10.md` §4, §7].
 
 The timing is deliberate. Inference now accounts for roughly two-thirds of all AI compute in 2026, with the inference-optimized chip market alone estimated at over $50B within roughly $400–450B of AI datacenter capex (Deloitte, TMT Predictions 2026) [`productization_feasibility_2026-07-10.md` §9.1].
 

@@ -8,21 +8,22 @@ CONCEPTS: GO_TO_MARKET|PRODUCT_LAUNCH|COMMUNITY_MANAGEMENT|PUBLIC_RELATIONS|SOCI
 
 ## 1. The hook
 
-A hook is ONE idea that opens a question the reader has to get answered. Never stack features into the hook — features close questions; hooks open them.
+Hook rules (from the 2026-08-14 generate-and-review panel — 36 candidates, 3 writer angles, 3 reviewer lenses):
+- ONE idea per hook. Phone crop is real: target ≤60 characters, hard cap 80, payload words first.
+- Setup + punch beats description: a price or ownership fact everyone already resents, answered by a true VSA fact.
+- Reviewer-derived accuracy rulings, binding on all copy: no "7 years" (Nov 2019 → Sept 2026 is 6y10m; >1% rounding — say "in the open since 2019"); no present-tense "complete/full design" (WRU spec open, no RTL [`PROSPECT_QA.md`]); defect tolerance is "remapped to pre-compiled, slightly derated configurations" [`productization_feasibility_2026-07-10.md` §7] — "identical answers" is claimable ONLY for the scripted FPGA disable-remap-rerun demo [`proof_ladder_2026-07-10.md` Rung 3]; no perf/speed multipliers until Rung 1 benchmarks ship.
 
-**One sentence (lead with this everywhere):**
+**Primary (lead with this everywhere):**
 
-> Someone just gave away a complete AI chip design. Anyone can build it, sell it, and keep every dollar — no license fees, no royalties, ever.
+> GPUs cost up to $40K. This AI chip design is free forever.
 
-(Owner-voice version: "I just open-sourced seven years of AI chip design. Build it, sell it, keep every dollar — no license fees, ever.")
+(58 chars. Grounding: H100 street ~$25–40K [`productization_feasibility_2026-07-10.md` §9.2]; royalty-free forever [`license_decision_memo.md`]. Owner-voice / $0 variant: "AI chips sell for up to $40K each. This design costs $0.")
 
-The gap it opens: *why would anyone do that?* — and the answer is the whole story (RISC-V playbook, enclosure-proof licensing, no monetization planned). Grounding: royalty-free/no-monetization [`license_decision_memo.md`]; 2019 public origin [`PROSPECT_QA.md`].
+**Per-audience one-liners** (each one idea, all panel-scored, all sourced):
 
-**Three alternate one-liners** (rotate by audience; each is one idea, all honest, all sourced):
-
-1. **Silicon crowd:** "This chip's simulator isn't an approximation of the silicon. It IS the silicon's behavior — exactly, every cycle — before the silicon exists." [`VSA_ASIC:docs/baseline/core_design.md` §4, `proof_ladder_2026-07-10.md` §1]
-2. **Business/supply-chain press:** "An AI accelerator designed to dodge every choke point of 2026: no HBM, no exotic packaging, no leading-edge node." [`productization_feasibility_2026-07-10.md` §4]
-3. **Open-source/RISC-V communities:** "RISC-V freed the CPU. This is the same playbook, aimed at AI inference." [`license_decision_memo.md`]
+1. **General reader / big-tech anxiety:** "Nobody can own this AI chip design. Not even Big Tech." [`license_decision_memo.md` anti-enclosure]
+2. **Business/industry press:** "Inference is two-thirds of AI compute. This chip design costs $0" [`productization_feasibility_2026-07-10.md` §9.1 (Deloitte), `license_decision_memo.md`] — trade-press variant: "H100s run $25–40K. This AI chip design is free to build and sell" [§9.2]
+3. **Open-source / HN / gamer crowd:** "Fork an AI chip design: build it, sell it, pay nobody, ever" [`license_decision_memo.md`]
 
 **Three deeper angles** (the paragraph-length versions for pitches and posts):
 

@@ -46,13 +46,13 @@ CONCEPTS: SOCIAL_MEDIA|MARKETING_COPY|PRODUCT_LAUNCH|COMMUNITY_MANAGEMENT
 >
 > **4/** Why that matters: verification is where accelerator programs die. Here, DV becomes equivalence checking and silicon validation becomes replay-and-diff. A feasibility study in the repo puts productization at a standard mid-size ASIC program (~$150–400M, 24–36 months, industry-norm estimate) — not a moonshot.
 >
-> **5/** Defect tolerance is native: a die with a dead Block gets remapped and returns *identical* answers at slightly reduced capacity. (GPUs harvest dies too — an H100 ships 132 of 144 SMs — the difference here is granularity and near-zero unsalvageable area.)
+> **5/** Defect tolerance is native: a die with a dead Block gets remapped to a pre-compiled, slightly derated configuration and keeps shipping. (GPUs harvest dies too — an H100 ships 132 of 144 SMs — the difference here is granularity and near-zero unsalvageable area.)
 >
 > **6/** Licensing = the RISC-V playbook for accelerators: CERN-OHL-W v2 (design) + Apache-2.0 (code) + a "VSA" certification mark for compatibility. Build it, sell it, extend it, royalty-free. Forks are legal; enclosing the base design isn't. And I'm pledging never to assert my own IP against any implementation.
 >
 > **7/** Being straight with you: there's no silicon and no RTL yet. What ships today is bit-exact and re-runnable; the repo's "proof ladder" doc is the public plan for the rest — reproducible benchmarks, open-flow PD on OpenROAD/ASAP7, then an FPGA demonstrator. Each step is something you can check, not believe.
 >
-> **8/** This started as a public GitHub design in Nov 2019 (TensorAsic). Seven years later it's a complete architecture, and it's yours now. Read it, break it, build it. [REPO_URL]
+> **8/** This started as a public GitHub design in Nov 2019 (TensorAsic). It's been in the open ever since, and it's yours now. Read it, break it, build it. [REPO_URL]
 
 [Grounding: tweets 2–3 `PROSPECT_QA.md`, `VSA_ASIC:docs/baseline/core_design.md` §4; tweet 4 `productization_feasibility_2026-07-10.md` §2, §4, §6; tweet 5 §4, §7 (H100 figure web-verified 2026-07-10); tweet 6 `license_decision_memo.md`; tweet 7 `release_plan_2026-09-06.md` §5, `proof_ladder_2026-07-10.md`; tweet 8 `PROSPECT_QA.md`.]
 
@@ -68,11 +68,11 @@ CONCEPTS: SOCIAL_MEDIA|MARKETING_COPY|PRODUCT_LAUNCH|COMMUNITY_MANAGEMENT
 
 **Body:**
 
-> Full disclosure: my project. Released today after ~7 years (first published as TensorAsic in Nov 2019).
+> Full disclosure: my project. Released today; it's been in the open since Nov 2019 (first published as TensorAsic).
 >
 > It's a reference architecture for a weight-stationary inference accelerator where whole networks chain layer-to-layer on chip — no HBM, no external-RAM round-trips. Execution is fully deterministic: no data-dependent timing, control, or routing anywhere; everything is scheduled at configuration time by the compiler.
 >
-> What that buys: the golden model is bit-exact against the hardware by construction, so verification is equivalence checking, and defective dies get remapped to produce identical results at reduced capacity (finer-grained than SM-level GPU harvesting).
+> What that buys: the golden model is bit-exact against the hardware by construction, so verification is equivalence checking, and defective dies get remapped to pre-compiled, slightly derated configurations (finer-grained than SM-level GPU harvesting).
 >
 > Shipping today: complete specs, golden model, toy compiler, and a 4-layer CNN compiled and run bit-exact end-to-end. Not shipping yet (and stated up front): RTL and silicon — the repo has a "proof ladder" doc with the plan and cost for each next step, including open-flow PD via OpenROAD/ASAP7 and an FPGA demonstrator.
 >
@@ -102,7 +102,7 @@ CONCEPTS: SOCIAL_MEDIA|MARKETING_COPY|PRODUCT_LAUNCH|COMMUNITY_MANAGEMENT
 
 > My project. The architectural choice I most want this sub's opinion on: full determinism — no data-dependent timing/control/routing, everything compiler-scheduled at config time. Consequences: golden C model is exact (not approximate) behavior, DV collapses toward equivalence checking, silicon validation is replay-and-diff, and there's no coherence/speculation/dynamic-scheduling surface at all.
 >
-> One Group is designed and verified once, then arrayed — the hierarchy maps directly onto hierarchical PR and verification flows. Native Block/Group-disable for defect tolerance with bit-identical remapped results.
+> One Group is designed and verified once, then arrayed — the hierarchy maps directly onto hierarchical PR and verification flows. Native Block/Group-disable defect tolerance: defect classes map to pre-compiled derated configurations, each validatable bit-for-bit before rollout.
 >
 > Today's release is specs + golden model + toy compiler with a bit-exact end-to-end CNN demo. RTL is the next phase (stated openly), with open-flow PD (OpenROAD/ASAP7) and an FPGA demonstrator on the public roadmap. License: CERN-OHL-W v2 design / Apache-2.0 code. Tear it apart. [REPO_URL]
 
@@ -114,7 +114,7 @@ CONCEPTS: SOCIAL_MEDIA|MARKETING_COPY|PRODUCT_LAUNCH|COMMUNITY_MANAGEMENT
 
 **Where:** owner's profile.
 
-> Today I released seven years of work as open source: the VSA, a complete reference design for an AI inference accelerator that anyone — any company, any country, any fab — can build royalty-free.
+> Today I released a design I've been building in the open since 2019: the VSA, a reference design for an AI inference accelerator that anyone — any company, any country, any fab — can build royalty-free.
 >
 > Three things make it different:
 >
