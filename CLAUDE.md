@@ -16,6 +16,7 @@ STANDING RULE: never change the base design detrimentally to CNN workloads unles
 ├ release_plan_2026-09-06.md - public release plan, target 2026-09-06; the gating checklist
 ├ license_decision_memo.md - licence choice and its reasoning
 ├ productization_feasibility_2026-07-10.md - open-sourced baseline -> production silicon: what an adopter actually faces
+├ proof_ladder_2026-07-10.md - cheapest proof artifacts, rung by rung (cost model -> open-flow PD -> FPGA -> MPW), that unlock adoption; feasibility-doc companion
 ├ ai_market_size_and_token_throughput_2026-07-23.md - market sizing and industry token-throughput context
 ├ PROSPECT_QA.md - rapid-fire Q/A for people considering joining
 └ dragon_naming_scheme.md - approved product-name pool (generic dragon-kind only, no folklore or fiction names)
