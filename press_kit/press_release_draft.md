@@ -24,7 +24,7 @@ A reference architecture for a deterministic, no-HBM neural-network inference ac
 
 ## Body
 
-**[CITY, DATE: 2026-09-06]** The VSA project today released the design of an open-source AI inference accelerator: the Virtual Systolic Array, a deterministic, weight-stationary MAC fabric architecture for neural-network inference [`PROSPECT_QA.md`]. The release includes finalized architecture specifications, a golden reference model, a toy compiler, and an end-to-end demonstration in which a compiled convolutional neural network runs bit-exact against the specification: the same answer, every cycle, every time [`release_plan_2026-09-06.md` §3].
+**[CITY, DATE — 2026-09-06]** — The VSA project today released the design of an open-source AI inference accelerator: the Virtual Systolic Array, a deterministic, weight-stationary MAC fabric architecture for neural-network inference [`PROSPECT_QA.md`]. The release includes finalized architecture specifications, a golden reference model, a toy compiler, and an end-to-end demonstration in which a compiled convolutional neural network runs bit-exact against the specification: the same answer, every cycle, every time [`release_plan_2026-09-06.md` §3].
 
 The design takes a deliberately different bet from GPU-class accelerators: trade peak MACs-per-cycle for massive on-chip weight residency, so whole networks chain layer-to-layer on chip with no HBM and no external-RAM round-trips [`PROSPECT_QA.md`]. Execution is fully deterministic: no data-dependent timing, control, or routing; every cycle's schedule is fixed at configuration time [`VSA_ASIC:docs/baseline/core_design.md` §4]. Inference-only by design: that constraint is what makes full determinism possible [`PROSPECT_QA.md`].
 
