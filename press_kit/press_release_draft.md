@@ -8,13 +8,13 @@ CONCEPTS: PRESS_RELEASE|OPEN_SOURCE_LICENSING|ASIC|AI_INFERENCE|PRODUCT_LAUNCH
 
 ## Headline candidates (pick one)
 
-1. **GPUs Cost Up to $40K. This AI Chip Design Is Free Forever.**
-2. **Nobody Can Own This AI Chip Design — Not Even Big Tech**
-3. **AI Chip Design Goes Open: Build It, Sell It, Pay No One**
-4. **Inference Is Two-Thirds of AI Compute. This Chip Design Costs $0.**
-5. **Fork an AI Chip Design: Build It, Sell It, Pay Nobody, Ever**
+1. **Fork This AI Chip Design: Build It, Sell It, Pay No One**
+2. **An AI Chip Design With No Vendor Lock-In — Because There Is No Vendor**
+3. **Inference Is Two-Thirds of AI Compute. This Chip Design Costs $0.**
+4. **An AI Chip Design With No HBM — and No Owner**
+5. *(gated on the VSA_ASIC perf citation, `launch_playbook.md` §1)* **10× Faster! Impossible? Check the Math.**
 
-*(All five are panel-survivors from the 2026-08-14 hook review: ≤66 chars so nothing crops on a phone, payload first, one idea each, every claim sourced — #1/#4 grounding `productization_feasibility_2026-07-10.md` §9.2/§9.1, #2/#3/#5 `license_decision_memo.md`.)*
+*(≤70 chars each so nothing crops on a phone, payload first, one idea each. Grounding: #1/#2/#4 `license_decision_memo.md`, #3 `productization_feasibility_2026-07-10.md` §9.1, #5 [NEEDS SOURCE]. Owner rulings 2026-08-14: no price-vs-free contrasts, no defect-tolerance claims, ownership angle targets business as "no vendor lock-in".)*
 
 ## Subhead
 
@@ -30,7 +30,7 @@ The design takes a deliberately different bet from GPU-class accelerators: trade
 
 Determinism is more than a correctness story — it is an economic one. Because a cycle-accurate model of the design *is* the design's exact behavior rather than an approximation, verification becomes equivalence checking and silicon validation becomes replay-and-diff, removing the design categories (coherence, speculation, dynamic scheduling, cache hierarchies) that consume most verification effort in conventional accelerator programs [`productization_feasibility_2026-07-10.md` §4]. An independent feasibility assessment concluded that a top-20 semiconductor company could take the design to production silicon as a standard mid-sized ASIC program — roughly 24–36 months and $150–400M all-in *(industry-norm estimate, ±2–3×)* [`productization_feasibility_2026-07-10.md` §2, §6].
 
-The architecture also avoids the most constrained parts of today's AI supply chain: no HBM, no exotic 2.5D packaging required for the baseline, and a design targeted at mature process nodes [`productization_feasibility_2026-07-10.md` §4]. Its uniform tiling — one Group designed and verified once, then arrayed — and native defect tolerance (dead Blocks are disabled and the workload remapped to pre-compiled, slightly derated configurations) further push it toward the inexpensive, forgiving end of accelerator productization [`productization_feasibility_2026-07-10.md` §4, §7].
+The architecture also avoids the most constrained parts of today's AI supply chain: no HBM, no exotic 2.5D packaging required for the baseline, and a design targeted at mature process nodes [`productization_feasibility_2026-07-10.md` §4]. Its uniform tiling — one Group designed and verified once, then arrayed — further pushes it toward the inexpensive, forgiving end of accelerator productization [`productization_feasibility_2026-07-10.md` §4].
 
 The timing is deliberate. Inference now accounts for roughly two-thirds of all AI compute in 2026, with the inference-optimized chip market alone estimated at over $50B within roughly $400–450B of AI datacenter capex (Deloitte, TMT Predictions 2026) [`productization_feasibility_2026-07-10.md` §9.1].
 

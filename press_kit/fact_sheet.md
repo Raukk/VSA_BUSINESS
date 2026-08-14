@@ -14,9 +14,8 @@ An **open-source reference ASIC design for AI inference**: the Virtual Systolic 
 
 ## Why it matters
 
-- **Fully deterministic execution** — no data-dependent timing, control, or routing; every cycle's schedule is fixed at configuration time **[spec]** [`VSA_ASIC:docs/baseline/core_design.md` §4]. A cycle-accurate model *is* the silicon's behavior, exactly — so verification becomes equivalence checking and every published number is re-runnable by the reader, not simulated [`proof_ladder_2026-07-10.md` §1].
-- **No HBM, no CoWoS-class packaging in the baseline, mature process nodes** — sidesteps the most supply-constrained parts of the AI hardware chain **[spec/analysis]** [`productization_feasibility_2026-07-10.md` §4].
-- **Native defect tolerance** — Block/Group disable with remap; a part with a dead Block is remapped and produces *identical* answers at slightly reduced capacity [`productization_feasibility_2026-07-10.md` §4, §7]. (Context: die harvesting is standard industry practice — the H100 physically carries 144 SMs and ships with 132 enabled **[external]**, web-verified 2026-07-10, Tom's Hardware forum / Cerebras blog, via `productization_feasibility_2026-07-10.md` §7. VSA's difference is finer granularity and near-zero unsalvageable die area, not "GPUs scrap dies.")
+- **Fully deterministic execution** — no data-dependent timing, control, or routing; every cycle's schedule is fixed at configuration time **[spec]** [`VSA_ASIC:docs/baseline/core_design.md` §4]. The golden model is bit-exact against the design spec, so verification becomes equivalence checking and published numbers are re-runnable by the reader [`proof_ladder_2026-07-10.md` §1].
+- **No HBM** — whole networks stay resident on chip and chain layer-to-layer, sidestepping the single most supply-constrained component in the AI hardware chain **[spec]** [`PROSPECT_QA.md`, `productization_feasibility_2026-07-10.md` §4].
 - **Anyone can productize it.** Feasibility assessment: a top-20 semiconductor company reaches revenue silicon in ~24–36 months for ~$150–400M all-in — a standard mid-sized ASIC program, no missing capability **[estimate: industry-norm, ±2–3×]** [`productization_feasibility_2026-07-10.md` §2, §6, §10].
 
 ## Key numbers (with sources)

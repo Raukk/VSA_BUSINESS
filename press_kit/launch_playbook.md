@@ -11,26 +11,31 @@ CONCEPTS: GO_TO_MARKET|PRODUCT_LAUNCH|COMMUNITY_MANAGEMENT|PUBLIC_RELATIONS|SOCI
 Hook rules (from the 2026-08-14 generate-and-review panel — 36 candidates, 3 writer angles, 3 reviewer lenses):
 - ONE idea per hook. Phone crop is real: target ≤60 characters, hard cap 80, payload words first.
 - Setup + punch beats description: a price or ownership fact everyone already resents, answered by a true VSA fact.
-- Reviewer-derived accuracy rulings, binding on all copy: no "7 years" (Nov 2019 → Sept 2026 is 6y10m; >1% rounding — say "in the open since 2019"); no present-tense "complete/full design" (WRU spec open, no RTL [`PROSPECT_QA.md`]); defect tolerance is "remapped to pre-compiled, slightly derated configurations" [`productization_feasibility_2026-07-10.md` §7] — "identical answers" is claimable ONLY for the scripted FPGA disable-remap-rerun demo [`proof_ladder_2026-07-10.md` Rung 3]; perf multipliers require a VSA_ASIC citation + scoping and the "on paper" label (see below) — never bare.
+- Owner rulings 2026-08-14, binding on all copy:
+  * The 1% rounding rule applies to TECHNICAL numbers (rates, perf, power), not durations or narrative counts. Avoid year-counting anyway — the project sat idle for most of 2019–2025, so "7 years of work" both overclaims and under-impresses. Use "in the open since 2019".
+  * No present-tense "complete/full design" (WRU spec open, no RTL [`PROSPECT_QA.md`]).
+  * **Defect-tolerance claims: scrapped from ALL launch copy.** "Same answers" reads as either an NN property (not the chip's) or a same-config claim (wrong — remaps are derated [`productization_feasibility_2026-07-10.md` §7]). Can of worms; the story doesn't need it.
+  * Price-vs-free contrasts ("GPUs cost $40K, this is free") are a false equivalency — a design is not a chip. Scrapped.
+  * Perf multipliers: once the VSA_ASIC citation lands, headlines may carry the bare multiplier — qualifiers live in the linked article/body, never in the headline. The body's FIRST paragraph must scope it: modeled numbers, re-runnable model, workload and system size.
 
-**The perf angle (owner-cleared 2026-08-14, gated on citation):** the cost model shows >10× GPU tokens/sec on DeepSeek at rack scale, and ~100× on WAN T4V vs GPU/TPU (the TPU figure inflated by its 1/8th utilization on that workload) — [NEEDS SOURCE: VSA_ASIC path + workload/system scoping for both, before ANY public use]. These are modeled numbers and we say so proudly — that's the whole posture: the model is public, the math is checkable, and "we don't have $100M to build it — you might" is the honest close. Mandatory framing whenever used: the multiplier never appears without "on paper" (or equivalent) and the pointer to the re-runnable model in the same breath.
+**The perf angle (owner-cleared 2026-08-14, gated on citation):** the cost model shows >10× GPU tokens/sec on DeepSeek at rack scale, and ~100× on WAN T4V vs GPU/TPU (the TPU figure inflated by its 1/8th utilization on that workload) — [NEEDS SOURCE: VSA_ASIC path + workload/system scoping for both, before ANY public use]. Modeled numbers, said proudly: the model is public, the math is checkable, "we don't have $100M to build it — you might" is the honest close.
 
 Perf hooks, ready the moment the citation lands (until then they do NOT ship):
-> On paper: 10× the tokens/sec of a GPU. The paper is free.  *(56 chars)*
-> 10× a GPU — on paper. The paper is public. Go check the math.  *(61 chars)*
-> This free AI chip design claims 10× a GPU. So check its math.  *(61 chars)*
+> 10× faster! Impossible? Check the math.  *(39 chars — the headline; scoping goes in the body it links to)*
+> On paper: 10× the tokens/sec of a GPU. Fork it today.  *(53 chars)*
+> Fork the FOSS AI chip design that beats GPUs — no HBM.  *(54 chars)*
 
-**Primary (lead with this everywhere):**
+**Primary (until the perf citation lands; then "10× faster! Impossible? Check the math." takes over):**
 
-> GPUs cost up to $40K. This AI chip design is free forever.
+> Fork a FOSS AI chip design: build it, sell it, pay nobody
 
-(58 chars. Grounding: H100 street ~$25–40K [`productization_feasibility_2026-07-10.md` §9.2]; royalty-free forever [`license_decision_memo.md`]. Owner-voice / $0 variant: "AI chips sell for up to $40K each. This design costs $0.")
+(57 chars. Grounding: [`license_decision_memo.md`] — use/modify/manufacture/sell, royalty-free; forks legal.)
 
-**Per-audience one-liners** (each one idea, all panel-scored, all sourced):
+**Per-audience one-liners** (each one idea, sourced):
 
-1. **General reader / big-tech anxiety:** "Nobody can own this AI chip design. Not even Big Tech." [`license_decision_memo.md` anti-enclosure]
-2. **Business/industry press:** "Inference is two-thirds of AI compute. This chip design costs $0" [`productization_feasibility_2026-07-10.md` §9.1 (Deloitte), `license_decision_memo.md`] — trade-press variant: "H100s run $25–40K. This AI chip design is free to build and sell" [§9.2]
-3. **Open-source / HN / gamer crowd:** "Fork an AI chip design: build it, sell it, pay nobody, ever" [`license_decision_memo.md`]
+1. **Tech/software crowd:** the fork hook above — "Fork a FOSS AI chip design" is the strongest phrase in the set for this audience; append "that beats GPUs, no HBM" once the perf citation lands.
+2. **Business/industry press:** "No vendor lock-in. No license fees. An AI chip design anyone can build." [`license_decision_memo.md`] — alt with the market stat: "Inference is two-thirds of AI compute. This chip design costs $0" [`productization_feasibility_2026-07-10.md` §9.1 (Deloitte)]
+3. **Gamers / general public:** "This AI chip design could bring GPU and RAM prices back down. Gamers, rejoice." (79 chars; owner-sanctioned angle — keep the "could", it's a forward-looking claim, and AI demand driving GPU/RAM prices is the setup the audience already believes. Body copy explains the mechanism: free design → more inference supply off gaming silicon.)
 
 **Three deeper angles** (the paragraph-length versions for pitches and posts):
 
@@ -85,7 +90,7 @@ A launch is a sequence, not a day. Each beat is already-planned work becoming co
 - **T+2/T+3 (Tue/Wed):** "What people asked" follow-up — a post answering the top 10 questions from HN/Reddit, in public. Converts launch-day skeptics into subscribers.
 - **Week 1:** technical deep-dive post #1: the determinism/golden-model story for practitioners (the strongest unique material).
 - **Week 2–3:** deep-dive #2: the licensing/certification-mark design and why it's the RISC-V playbook [`license_decision_memo.md`]. Pitch this one to open-source-policy audiences.
-- **Month 1 (as they land, never before):** proof-ladder rung announcements — reproducible benchmarks (Rung 1), open-flow PD results (Rung 2), FPGA demonstrator progress (announced at launch as "next" [`release_plan_2026-09-06.md` §5]). **The FPGA bit-exact + defect-disable demo is the single best future press moment we have** — disable a cell live, remap, identical answers [`proof_ladder_2026-07-10.md` Rung 3]. Save a full push for it.
+- **Month 1 (as they land, never before):** proof-ladder rung announcements — reproducible benchmarks (Rung 1), open-flow PD results (Rung 2), FPGA demonstrator progress (announced at launch as "next" [`release_plan_2026-09-06.md` §5]). **The FPGA bit-exact demo is the single best future press moment we have** — live hardware matching the golden model bit-for-bit [`proof_ladder_2026-07-10.md` Rung 3]. Save a full push for it. (Defect-disable stays in the demo script but out of the marketing claims per the §1 ruling.)
 - **Ongoing:** first-external-contributor and first-conformance-question moments; a public "open problems" list (from `VSA_ASIC:docs/baseline/design_open_items.md` equivalents in the release) — nothing recruits engineers like well-specified unsolved problems.
 - **Opportunistic:** any credible third-party writeup or re-run of the numbers gets amplified (with permission), even — especially — if it's critical. "They checked our math" is the brand.
 
