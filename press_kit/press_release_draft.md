@@ -8,11 +8,13 @@ CONCEPTS: PRESS_RELEASE|OPEN_SOURCE_LICENSING|ASIC|AI_INFERENCE|PRODUCT_LAUNCH
 
 ## Headline candidates (pick one)
 
-1. **VSA: An Open-Source AI Inference Chip Design, Released for Anyone to Build**
-2. **The AI Accelerator You Can Fork: VSA Reference ASIC Design Goes Open Source**
-3. **Open-Source Hardware Takes Aim at AI Inference: The VSA Reference Design Is Now Public**
-4. **No HBM, No Black Box: VSA Releases a Fully Open, Deterministic AI Inference Chip Design**
-5. **From 2019 GitHub Experiment to Full Chip Architecture: The VSA AI Accelerator Design Goes Open**
+1. **Anyone Can Now Build and Sell This AI Chip — Free, Forever**
+2. **The RISC-V Playbook Comes for AI Chips**
+3. **Seven Years of Chip Design, Given Away: VSA Open-Sources a Complete AI Inference Accelerator**
+4. **An AI Chip Design With No HBM — and No Owner**
+5. **This Chip's Simulator Is the Chip: VSA Open-Sources a Fully Deterministic AI Inference Design**
+
+*(Headline test: does it open a question the reader has to click to close? A headline that merely describes the release — "VSA Releases Open-Source Design" — is a changelog entry, not a headline.)*
 
 ## Subhead
 

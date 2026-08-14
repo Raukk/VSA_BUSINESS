@@ -8,13 +8,23 @@ CONCEPTS: GO_TO_MARKET|PRODUCT_LAUNCH|COMMUNITY_MANAGEMENT|PUBLIC_RELATIONS|SOCI
 
 ## 1. The hook
 
+A hook is ONE idea that opens a question the reader has to get answered. Never stack features into the hook — features close questions; hooks open them.
+
 **One sentence (lead with this everywhere):**
 
-> An open-source AI-inference chip design you can actually build: deterministic to the bit, no HBM, licensed like RISC-V — and every performance claim ships with the model that lets you check it yourself.
+> Someone just gave away a complete AI chip design. Anyone can build it, sell it, and keep every dollar — no license fees, no royalties, ever.
 
-(Grounding: determinism [`VSA_ASIC:docs/baseline/core_design.md` §4]; no HBM [`PROSPECT_QA.md`]; licensing model [`license_decision_memo.md`]; re-runnable claims [`proof_ladder_2026-07-10.md` §4].)
+(Owner-voice version: "I just open-sourced seven years of AI chip design. Build it, sell it, keep every dollar — no license fees, ever.")
 
-**Three alternate angles** (rotate by audience; all honest, all sourced):
+The gap it opens: *why would anyone do that?* — and the answer is the whole story (RISC-V playbook, enclosure-proof licensing, no monetization planned). Grounding: royalty-free/no-monetization [`license_decision_memo.md`]; 2019 public origin [`PROSPECT_QA.md`].
+
+**Three alternate one-liners** (rotate by audience; each is one idea, all honest, all sourced):
+
+1. **Silicon crowd:** "This chip's simulator isn't an approximation of the silicon. It IS the silicon's behavior — exactly, every cycle — before the silicon exists." [`VSA_ASIC:docs/baseline/core_design.md` §4, `proof_ladder_2026-07-10.md` §1]
+2. **Business/supply-chain press:** "An AI accelerator designed to dodge every choke point of 2026: no HBM, no exotic packaging, no leading-edge node." [`productization_feasibility_2026-07-10.md` §4]
+3. **Open-source/RISC-V communities:** "RISC-V freed the CPU. This is the same playbook, aimed at AI inference." [`license_decision_memo.md`]
+
+**Three deeper angles** (the paragraph-length versions for pitches and posts):
 
 1. **The verification angle (for silicon people):** "Determinism kills the DV monster." No coherence, no speculation, no dynamic scheduling — the golden model *is* the behavioral spec, DV becomes equivalence checking [`productization_feasibility_2026-07-10.md` §4]. This is the angle for Hacker News' hardware crowd and semi-industry newsletters.
 2. **The supply-chain angle (for industry/business press):** an accelerator with no HBM and no exotic packaging, on mature nodes, in a year when HBM and CoWoS are the choke points and inference is ~two-thirds of AI compute (Deloitte 2026, via `productization_feasibility_2026-07-10.md` §9.1). Buildable by anyone with fab access — a $150–400M standard program, not a moonshot *(industry-norm estimate)* [`productization_feasibility_2026-07-10.md` §6].
