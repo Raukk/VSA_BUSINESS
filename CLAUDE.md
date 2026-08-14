@@ -19,7 +19,8 @@ STANDING RULE: never change the base design detrimentally to CNN workloads unles
 ├ proof_ladder_2026-07-10.md - cheapest proof artifacts, rung by rung (cost model -> open-flow PD -> FPGA -> MPW), that unlock adoption; feasibility-doc companion
 ├ ai_market_size_and_token_throughput_2026-07-23.md - market sizing and industry token-throughput context
 ├ PROSPECT_QA.md - rapid-fire Q/A for people considering joining
-└ dragon_naming_scheme.md - approved product-name pool (generic dragon-kind only, no folklore or fiction names)
+├ dragon_naming_scheme.md - approved product-name pool (generic dragon-kind only, no folklore or fiction names)
+└ press_kit/ - press-release material; exempt from the Output style rule (see below)
 
 The release-assembly area and press drafts stay in `VSA_ASIC:staging/` under that folder's gate until the release is ready; they are not duplicated here.
 
@@ -40,3 +41,5 @@ Citations naming another repo carry the repo prefix: `VSA_ASIC:docs/baseline/cor
 DENSE|NO_FLUFF|DIRECT|SHORT|HIGH_SIGNAL|MINIMAL_PROSE|NO_CAVEMAN
 
 Applies to internal docs and replies. Outward-facing copy (press, launch material) may adopt its own register, but never at the cost of accuracy: no claim without a source, no rounding past 1%, no superlative the specs do not carry.
+
+**Exception — `press_kit/`:** the wording/tone rules above (DENSE|NO_FLUFF|DIRECT|SHORT|HIGH_SIGNAL|MINIMAL_PROSE) do NOT apply to files in `press_kit/`. Write those in a natural press register. The accuracy rules (sourcing, rounding, no unsupported superlatives) still apply in full.
