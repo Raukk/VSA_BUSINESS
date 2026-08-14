@@ -22,7 +22,7 @@ CONCEPTS: SOCIAL_MEDIA|MARKETING_COPY|PRODUCT_LAUNCH|COMMUNITY_MANAGEMENT
 >
 > The core bet: trade peak MACs-per-cycle for massive on-chip weight residency, so whole networks chain layer-to-layer on chip — no HBM, no external-RAM round-trips.
 >
-> What's in the release today: complete architecture specs, a golden reference model, a toy compiler, and an end-to-end demo where a compiled 4-layer CNN runs bit-exact against the spec. No RTL and no silicon yet — that's stated on page one, and the repo includes a "proof ladder" doc laying out exactly what gets proven next and how cheaply (reproducible benchmarks, OpenROAD/ASAP7 open-flow PD results, then an FPGA demonstrator).
+> What's in the release today: the architecture specs, a golden reference model, a toy compiler, and an end-to-end demo where a compiled 4-layer CNN runs bit-exact against the spec. No RTL and no silicon yet — that's stated on page one, and the repo includes a "proof ladder" doc laying out exactly what gets proven next and how cheaply (reproducible benchmarks, OpenROAD/ASAP7 open-flow PD results, then an FPGA demonstrator).
 >
 > The property doing the heavy lifting is determinism: no data-dependent timing, control, or routing — every cycle is scheduled at configuration time. That means the golden model isn't an approximation of the hardware's behavior; it IS the hardware's behavior, exactly. Verification collapses to equivalence checking, and every number we publish is something you can re-run rather than take on faith.
 >

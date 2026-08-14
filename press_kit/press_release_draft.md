@@ -18,7 +18,7 @@ CONCEPTS: PRESS_RELEASE|OPEN_SOURCE_LICENSING|ASIC|AI_INFERENCE|PRODUCT_LAUNCH
 
 ## Subhead
 
-A complete reference architecture for a deterministic, no-HBM neural-network inference accelerator — specifications, a bit-exact golden model, and a working compiler demo — released under open licenses modeled on the RISC-V compatible-ecosystem playbook: anyone may build it, sell it, and extend it, royalty-free, and nobody can enclose the base design.
+A reference architecture for a deterministic, no-HBM neural-network inference accelerator — specifications, a bit-exact golden model, and a working compiler demo — released under open licenses modeled on the RISC-V compatible-ecosystem playbook: anyone may build it, sell it, and extend it, royalty-free, and nobody can enclose the base design.
 
 ---
 
@@ -36,7 +36,7 @@ The timing is deliberate. Inference now accounts for roughly two-thirds of all A
 
 **Licensing: open like RISC-V, protected like a standard.** The design ships under CERN-OHL-W v2 (design and specifications), Apache-2.0 (golden model, compiler, and tools), and a reserved "VSA" certification mark for implementations that pass the public conformance surface [`license_decision_memo.md`]. Anyone may use, modify, manufacture, and sell — including proprietary products built on top — royalty-free, forever; the weak-reciprocity term prevents anyone from enclosing the base design itself, and the certification mark is what makes cross-vendor compatibility real, following the RISC-V and OpenPOWER precedent [`license_decision_memo.md`]. The project's owner additionally pledges a public non-assertion covenant: any personal IP rights in the design will never be asserted against any implementation, compatible or not [`license_decision_memo.md`]. *(License package pending final counsel review [`license_decision_memo.md`]; confirm complete before release.)*
 
-**A design with a public paper trail.** The VSA primitive was published openly in November 2019 as TensorAsic (github.com/Raukk/TensorAsic); this release is that idea carried through to a complete architecture [`PROSPECT_QA.md`]. The dated public record doubles as prior art protecting future implementers [`productization_feasibility_2026-07-10.md` §8].
+**A design with a public paper trail.** The VSA primitive was published openly in November 2019 as TensorAsic (github.com/Raukk/TensorAsic); this release is that idea carried through to this architecture release [`PROSPECT_QA.md`]. The dated public record doubles as prior art protecting future implementers [`productization_feasibility_2026-07-10.md` §8].
 
 **What ships today, and what's next.** Today's release contains the finalized specifications, documentation and FAQ, the golden model and toy compiler with the bit-exact CNN demonstration, the conformance clause, and a contribution/governance page [`release_plan_2026-09-06.md` §3]. The project's published "proof ladder" lays out the next steps in public: reproducible cost-model benchmarks on named open models, independent physical-design results through an open OpenROAD/ASAP7 flow, and an FPGA demonstrator running bit-exact against the golden model — each artifact chosen to convert claims into things a reader can re-run rather than believe [`proof_ladder_2026-07-10.md`].
 
