@@ -137,4 +137,4 @@ CONCEPTS: SOCIAL_MEDIA|MARKETING_COPY|PRODUCT_LAUNCH|COMMUNITY_MANAGEMENT
 - Numbers allowed in social copy: only the ones above, with their scoping words intact ("industry-norm estimate", "no silicon yet", "~2× bar"). Anything else → check `fact_sheet.md` first.
 - No clock frequencies in social copy at all. If asked: 4 GiHz planning clock (2^32 cycles/s = 4.294967296 GHz), explicitly labeled a planning basis, never a silicon claim [VSA_BUSINESS:CLAUDE.md clock rule].
 - No power numbers until the power/thermal note ships [`release_plan_2026-09-06.md` §2].
-- No tok/s or $/inference figures in launch social copy — those wait for the Rung 1 reproducible benchmarks so the scripts land with the claim [`proof_ladder_2026-07-10.md` Rung 1].
+- Tok/s and $/inference multipliers (the 10×-DeepSeek / ~100×-WAN-T4V modeled results) may ship ONLY once their VSA_ASIC citation + scoping lands in `launch_playbook.md` §1, and always with the "on paper — model is public, check it" framing attached. Until then, none.
