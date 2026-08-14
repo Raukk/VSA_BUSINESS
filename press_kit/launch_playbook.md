@@ -18,12 +18,20 @@ Hook rules (from the 2026-08-14 generate-and-review panel — 36 candidates, 3 w
   * Price-vs-free contrasts ("GPUs cost $40K, this is free") are a false equivalency — a design is not a chip. Scrapped.
   * Perf multipliers: once the VSA_ASIC citation lands, headlines may carry the bare multiplier — qualifiers live in the linked article/body, never in the headline. The body's FIRST paragraph must scope it: modeled numbers, re-runnable model, workload and system size.
 
-**The perf angle (owner-cleared 2026-08-14, gated on citation):** the cost model shows >10× GPU tokens/sec on DeepSeek at rack scale, and ~100× on WAN T4V vs GPU/TPU (the TPU figure inflated by its 1/8th utilization on that workload) — [NEEDS SOURCE: VSA_ASIC path + workload/system scoping for both, before ANY public use]. Modeled numbers, said proudly: the model is public, the math is checkable, "we don't have $100M to build it — you might" is the honest close.
+**The perf angle (owner-cleared 2026-08-14, gated on citation):** source repo is **VSA_CASE_STUDIES** (owner, 2026-08-14). Owner-stated modeled results: >10× GPU tokens/sec on DeepSeek at rack scale; ~100× on WAN T4V vs GPU/TPU (TPU figure inflated by its 1/8th utilization on that workload) — WAN T4V runs at ~1 clip/second; LFN2.5-2.6 (a small model) on a single wafer at tens of thousands of tokens/second per prompt. [NEEDS SOURCE: exact `VSA_CASE_STUDIES:` doc path + workload/system scoping for each figure, before ANY public use.] Modeled numbers, said proudly: the model is public, the math is checkable, "we don't have $100M to build it — you might" is the honest close.
 
-Perf hooks, ready the moment the citation lands (until then they do NOT ship):
+Perf hooks, ready the moment the citations land (until then they do NOT ship):
 > 10× faster! Impossible? Check the math.  *(39 chars — the headline; scoping goes in the body it links to)*
 > On paper: 10× the tokens/sec of a GPU. Fork it today.  *(53 chars)*
 > Fork the FOSS AI chip design that beats GPUs — no HBM.  *(54 chars)*
+> Tired of waiting on AI? This chip design does 10,000 tokens a second.  *(69 chars; conservative end of the LFN2.5-2.6 single-wafer figure)*
+> Don't trust your eyes: an AI chip design that makes thousands of videos an hour.  *(80 chars; ~1 clip/s × 3600 — WAN T4V figure)*
+
+**Spicy pool (owner drafts 2026-08-14 — each blocked until its noted fix):**
+- "It's NVindependence day! A FOSS AI chip that is 1/10th the cost." — BLOCKED: no 1/10th-cost source exists (the sourced estimate is 3–5× COGS [`productization_feasibility_2026-07-10.md` §9.2]); needs a `VSA_CASE_STUDIES:` cite or the sourced multiple. The NVindependence pun itself is fair parody — keep it.
+- "Less electricity, less water, less datacenters — new AI chip could revolutionize the industry." — PARKED until the power/thermal note ships [`release_plan_2026-09-06.md` §2]; power/water claims are currently banned outright.
+- "The AI swarms are coming! New chip does hundreds of prompts per second." — BLOCKED: "hundreds of prompts/sec" needs its own `VSA_CASE_STUDIES:` cite.
+- Wording note on the whole pool: "new chip does X" asserts silicon that doesn't exist — the vaporware kill-shot. "Chip design" or "could/would" phrasing keeps the same energy and survives the comment section; the two perf hooks above show the pattern.
 
 **Primary (until the perf citation lands; then "10× faster! Impossible? Check the math." takes over):**
 
@@ -35,7 +43,7 @@ Perf hooks, ready the moment the citation lands (until then they do NOT ship):
 
 1. **Tech/software crowd:** the fork hook above — "Fork a FOSS AI chip design" is the strongest phrase in the set for this audience; append "that beats GPUs, no HBM" once the perf citation lands.
 2. **Business/industry press:** "No vendor lock-in. No license fees. An AI chip design anyone can build." [`license_decision_memo.md`] — alt with the market stat: "Inference is two-thirds of AI compute. This chip design costs $0" [`productization_feasibility_2026-07-10.md` §9.1 (Deloitte)]
-3. **Gamers / general public:** "This AI chip design could bring GPU and RAM prices back down. Gamers, rejoice." (79 chars; owner-sanctioned angle — keep the "could", it's a forward-looking claim, and AI demand driving GPU/RAM prices is the setup the audience already believes. Body copy explains the mechanism: free design → more inference supply off gaming silicon.)
+3. **Gamers / general public:** "This AI chip design could bring GPU and RAM prices back down. Gamers, rejoice." (79 chars; owner-approved 2026-08-14 — "should" is an accepted stronger variant. Forward-looking claim; AI demand driving GPU/RAM prices is the setup the audience already believes. Body copy explains the mechanism: free design → more inference supply off gaming silicon.)
 
 **Three deeper angles** (the paragraph-length versions for pitches and posts):
 
@@ -55,7 +63,7 @@ Perf hooks, ready the moment the citation lands (until then they do NOT ship):
 
 ## 3. Launch day sequencing (Sunday 2026-09-06 — see timing note)
 
-**Timing note:** Sept 6 2026 is a Sunday, and Sept 7 is US Labor Day. Weekend/holiday HN can work for deep-technical posts (less competition, hobbyist audience is *home*), but press pickup will lag to Tuesday. Recommendation: repo goes public Sept 6 as planned; treat **Tuesday Sept 8, 8–10am ET** as the press/Show HN main push if the owner wants maximum first-day reach — or embrace the hobbyist-weekend launch and let press follow. Decide once, in advance.
+**Timing (owner decision 2026-08-14):** launch is **Sunday Sept 6**, deliberately. Tip-line sends and submissions go out **Saturday night (Sept 5)** so the weekend hobbyist crowd — who are home, and home on a holiday weekend — builds momentum into a **Monday viral wave**. Sept 7 is US Labor Day: enthusiast channels peak, press desks lag to Tuesday — treat Tuesday Sept 8 morning as the follow-through window for journalist pitches (§4), riding the weekend numbers as the proof of interest.
 
 Order matters — each step feeds the next:
 
@@ -82,6 +90,7 @@ Pitch = fact sheet + 2-paragraph personal email + offer of owner interview. No e
 - **AI-infrastructure newsletters** — the inference-economics crowd. Story: cost-per-inference framing with the tipping-point honesty (≥~2× or rational buyers wait [`productization_feasibility_2026-07-10.md` §9.2]) — giving journalists the project's *own* skeptical bar is unusual and quotable.
 - **YouTubers covering silicon + open source** — the Asianometry-class chip-industry explainers, EDA/FPGA educators, open-hardware channels. Offer: diagrams, the demo, and owner interview. A 20-minute "how this architecture works" video is the best month-1 artifact someone else can make for us.
 - **Podcasts** — semiconductor/EDA podcasts and open-source hardware shows for the owner interview circuit in weeks 2–4.
+- **Hackaday** — submit via their tip line (hackaday.com/submit-a-tip), **Saturday night Sept 5** per the §3 timing plan. This is their exact beat (open hardware, real engineering, underdog projects); lead with the fork hook and the bit-exact demo, not the business angle. No exclusivity needed — a tip is not a pitch.
 
 ## 5. Week-1 / Month-1 beats (keep the story moving)
 
