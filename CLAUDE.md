@@ -22,7 +22,7 @@ STANDING RULE: never change the base design detrimentally to CNN workloads unles
 ├ dragon_naming_scheme.md - approved product-name pool (generic dragon-kind only, no folklore or fiction names)
 └ press_kit/ - press-release material; exempt from the Output style rule (see below)
 
-The release-assembly area and press drafts stay in `VSA_ASIC:staging/` under that folder's gate until the release is ready; they are not duplicated here.
+Press drafts live in `press_kit/` until promoted to `VSA_ASIC:staging/` as ready-to-go; the release-assembly area itself stays there under that folder's gate.
 
 ## Numerical Precision (upstream rules, copied)
 - Numbers are load-bearing; drift compounds. Round only if change <1%.
