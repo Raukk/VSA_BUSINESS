@@ -9,18 +9,18 @@ CONCEPTS: ENERGY_EFFICIENCY|MEMORY_HIERARCHY|DATA_LOCALITY|SYSTOLIC_ARRAY|DRAM_B
 Almost all inference energy is spent moving bytes, not multiplying them. The VSA keeps the bytes still.
 
 ## 2. Headline number
-**Over 5× the INT8 energy efficiency of a current-generation NVIDIA GPU — MAC fabric only, not whole chip.**
+**Over 5× the FP8 energy efficiency of a current-generation NVIDIA GPU — MAC fabric only, not whole chip.**
 
-| Basis | INT8 TOPS/W | Ratio |
+| Basis | FP8 TFLOPS/W | Ratio |
 |---|---|---|
-| VSA MAC cores alone, 7 nm sim | ~51 | 11× |
-| VSA fabric all-in — store read + wires + clock, gated | ~36 | 8× |
-| Same, scaled to 2 nm | ~99 | 22× |
+| VSA MAC cores alone, 7 nm sim | ~35 | 7.8× |
+| VSA fabric all-in — store read + wires + clock, gated | ~27 | 6.0× |
+| Same, scaled to 2 nm | ~75 | 17× |
 | NVIDIA B200, whole card | 4.5 | 1× |
 
-VSA rows derived from `VSA_SIM:docs/rollup_estimates.md`: 39.15 fJ/MAC-cycle (cores) and ~56 fJ/Unit-cycle (all-in) at 2 ops/MAC; 2 nm row from 16,384 MACs at 1.42 W and the 4 GiHz planning clock = 140.7 TOPS. B200 row: 4.5 petaOPS INT8 dense at 1000 W TGP, [Lenovo ThinkSystem HGX B200 product guide](https://lenovopress.lenovo.com/lp2226-thinksystem-nvidia-b200-180gb-1000w-gpu), retrieved 2026-08-18.
+VSA rows derived from `VSA_SIM:docs/rollup_estimates.md`: 57.3 fJ/MAC-cycle (P2b shipping FP8, window-corrected) and ~74 fJ/Unit-cycle all-in, at 2 FLOPs/MAC; 2 nm row from 16,384 MACs at 1.87 W and the 4 GiHz planning clock = 140.7 TFLOPS. B200 row: 4.5 petaFLOPS FP8 dense at 1000 W TGP, [Lenovo ThinkSystem HGX B200 product guide](https://lenovopress.lenovo.com/lp2226-thinksystem-nvidia-b200-180gb-1000w-gpu), retrieved 2026-08-18. INT8 runs better on both our sides — 39.15 fJ cores, ~56 fJ all-in, i.e. ~51 / ~36 TOPS/W at 7 nm — but INT8 against an FP8 GPU number is not a like-for-like comparison, so FP8 is the one to quote.
 
-**The asterisks, which travel with the number wherever it goes.** The VSA figure is a MAC fabric; the B200 figure is a whole card including HBM, memory controllers, SerDes and host interface. Excluded on our side: activation SRAM, global weight distribution, drain, SerDes, DRAM. The gap will narrow once those land. Conservative in our favor: our 7 nm sim is compared against 4NP silicon. Ship ">5×" and nothing larger until the whole-chip pass closes — the 8×, 11× and 22× rows are internal.
+**The asterisks, which travel with the number wherever it goes.** The VSA figure is a MAC fabric; the B200 figure is a whole card including HBM, memory controllers, SerDes and host interface. Excluded on our side: activation SRAM, global weight distribution, drain, SerDes, DRAM. The gap will narrow once those land. Conservative in our favor: our 7 nm sim is compared against 4NP silicon. Ship ">5×" and nothing larger until the whole-chip pass closes — the 6.0×, 7.8× and 17× rows are internal. One open dependency: the FP8 variant's psum format (44 b Kulisch) still needs upstream spec acknowledgment (`VSA_SIM:docs/rollup_estimates.md` §Open decisions 2).
 
 ## 3. Operating point — read before any number below
 Every figure here is the **maximum-performance** point: 4 GiHz planning clock, ≥nominal Vdd. Nothing here is an efficiency-optimized design. Dynamic energy scales with V², so modest throttling buys disproportionate savings, and upstream's own anchor is **~2× J/op** for a wide-slow 0.6 V design against nominal (`VSA_ASIC:docs/baseline/vsa_block_floorplan_weight_buffer_analysis.md` §7). A low-power mode, and other approaches not yet simulated, should improve on these numbers rather than degrade them. The efficiency below is bought with locality, not with a slow clock.
@@ -42,7 +42,7 @@ Every figure here is the **maximum-performance** point: 4 GiHz planning clock, �
 | Clock gating saving | 8.75 fJ/cycle = 4.2% |
 | 16,384 MACs all-in @ 4 GiHz | 3.94 W (7 nm) → 2.76 (5) → 1.97 (3) → 1.42 (2 nm) |
 
-Input-shift mode runs ~+16%. FP8 adds ~+18 fJ/Unit-cycle over INT8. Source: `VSA_SIM:docs/rollup_estimates.md`, `VSA_SIM:primitives/chain_segment/results.md` §P3b.
+Input-shift mode runs ~+16%. FP8 adds ~+18 fJ/Unit-cycle over INT8 (~74 fJ all-in; 5.21 W per 16,384 MACs at 7 nm, 1.87 W at 2 nm). Source: `VSA_SIM:docs/rollup_estimates.md`, `VSA_SIM:primitives/chain_segment/results.md` §P3b.
 
 ## 6. What the design still pays for
 - **SerDes and off-chip links.** Not in any figure above; large models exceed one chip/interposer/wafer and pay inter-chip transport.
