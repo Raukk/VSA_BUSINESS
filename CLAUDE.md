@@ -42,4 +42,6 @@ DENSE|NO_FLUFF|DIRECT|SHORT|HIGH_SIGNAL|MINIMAL_PROSE|NO_CAVEMAN
 
 Applies to internal docs and replies. Outward-facing copy (press, launch material) may adopt its own register, but never at the cost of accuracy: no claim without a source, no rounding past 1%, no superlative the specs do not carry.
 
-**Exception — `press_kit/`:** the wording/tone rules above (DENSE|NO_FLUFF|DIRECT|SHORT|HIGH_SIGNAL|MINIMAL_PROSE) do NOT apply to files in `press_kit/`. Write those in a natural press register. The accuracy rules (sourcing, rounding, no unsupported superlatives) still apply in full.
+**Exception — `press_kit/` and marketing/sales copy wherever it lives:** the wording/tone rules above (DENSE|NO_FLUFF|DIRECT|SHORT|HIGH_SIGNAL|MINIMAL_PROSE) do NOT apply. Write in a natural press register; impact leads.
+
+PRESENTATIONAL ROUNDING (owner ruling 2026-08-18): headline and body figures may round to 1-2 significant figures — say "3x", not "2.98886789x". Three conditions: round against our own interest (claims down, costs and risks up); the exact figure and its `VSA_ASIC:` path appear in the same file's fact sheet or footnote; the rounded form never crosses into a different claim. Everything else holds in full — no invented number, no figure the specs do not carry, no exaggeration, no unsupported superlative, market/pricing figures quoted with source and date. This relaxes presentation only: the <1% rule in Numerical Precision still governs every derivation, including those feeding press copy.
