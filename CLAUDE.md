@@ -23,6 +23,7 @@ STANDING RULE: never change the base design detrimentally to CNN workloads unles
 ├ PROSPECT_QA.md - rapid-fire Q/A for people considering joining
 ├ dragon_naming_scheme.md - approved product-name pool (generic dragon-kind only, no folklore or fiction names)
 ├ power_efficiency_summary_2026-08-18.md - why the VSA uses less power: mechanism, simulated numbers, what is not yet claimable
+├ competitor_power_efficiency_table_2026-08-18.md - sourced FP8 TFLOPS/W denominators for the power multiplier (B200, B300, Rubin, MI355X, TPU v7)
 └ press_kit/ - press-release material; exempt from the Output style rule (see below)
 
 Press drafts live in `press_kit/` until promoted to `VSA_ASIC:staging/` as ready-to-go; the release-assembly area itself stays there under that folder's gate.
