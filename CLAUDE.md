@@ -20,6 +20,7 @@ STANDING RULE: never change the base design detrimentally to CNN workloads unles
 ├ ai_market_size_and_token_throughput_2026-07-23.md - market sizing and industry token-throughput context
 ├ PROSPECT_QA.md - rapid-fire Q/A for people considering joining
 ├ dragon_naming_scheme.md - approved product-name pool (generic dragon-kind only, no folklore or fiction names)
+├ power_efficiency_summary_2026-08-18.md - why the VSA uses less power: mechanism, simulated numbers, what is not yet claimable
 └ press_kit/ - press-release material; exempt from the Output style rule (see below)
 
 Press drafts live in `press_kit/` until promoted to `VSA_ASIC:staging/` as ready-to-go; the release-assembly area itself stays there under that folder's gate.
